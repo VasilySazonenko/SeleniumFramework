@@ -20,10 +20,6 @@ public class SeleniumConfig {
         }
     }
 
-    public String getPropertyValue(String name) {
-        return properties.getProperty(name);
-    }
-
     public String getBrowser(){
         return properties.getProperty("browser");
     }

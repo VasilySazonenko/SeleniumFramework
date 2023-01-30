@@ -1,5 +1,6 @@
 package driverFactory;
 
+import exceptions.BadConfigurationException;
 import framework.SeleniumConfig;
 import org.openqa.selenium.WebDriver;
 
@@ -10,20 +11,23 @@ public class DriverFactory {
 
     public WebDriver initializeBrowser() {
         SeleniumConfig seleniumConfig = new SeleniumConfig();
-        WebDriver driver = null;
-        switch (seleniumConfig.getBrowser()){
-            case "Chrome":
-                ChromeDriverFactory chromeDriverFactory = new ChromeDriverFactory();
+        String browser = seleniumConfig.getBrowser().toLowerCase();
+        WebDriver driver;
+        switch (browser){
+            case "chrome":
+                ChromeIDriverFactory chromeDriverFactory = new ChromeIDriverFactory();
                 driver = chromeDriverFactory.initDriver();
                 break;
-            case "Firefox":
-                FirefoxDriverFactory firefoxDriverFactory = new FirefoxDriverFactory();
-                driver = firefoxDriverFactory.initializeFirefoxDriver();
+            case "firefox":
+                FirefoxIDriverFactory firefoxDriverFactory = new FirefoxIDriverFactory();
+                driver = firefoxDriverFactory.initDriver();
                 break;
-            case "Edge":
-                EdgeDriverFactory  edgeDriverFactory = new EdgeDriverFactory();
+            case "edge":
+                EdgeIDriverFactory edgeDriverFactory = new EdgeIDriverFactory();
                 driver =  edgeDriverFactory.initDriver();
                 break;
+            default:
+                throw new BadConfigurationException(String.format("This browser [%s] do not support", browser));
         }
         return driver;
     }

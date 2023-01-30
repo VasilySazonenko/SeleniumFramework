@@ -7,15 +7,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+/*
+Class for elements like waiters and other visibility things
+ */
 public class SeleniumObservable {
 
-    /*
-    Class for elements like waiters and other visibility things
-     */
-    WebDriver driver;
+    private TestContext testContext;
 
-    public SeleniumObservable(WebDriver driver) {
-        this.driver = driver;
+    private WebDriver driver;
+
+    public SeleniumObservable(TestContext testContext) {
+        this.testContext = testContext;
+        this.driver = testContext.getDriver();
     }
 
     public void visibilityOfWaiter(By byLocator) {

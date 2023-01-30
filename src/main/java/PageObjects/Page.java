@@ -5,10 +5,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+/*
+Clicks, findelements and so on
+ */
 public abstract class Page {
-    /*
-    Clicks, findelements and so on
-     */
     private final TestContext testContext;
     private final WebDriver driver;
 

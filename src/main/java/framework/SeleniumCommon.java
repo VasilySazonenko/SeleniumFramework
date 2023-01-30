@@ -5,30 +5,29 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
+/**
+ * Class to initialize everything before and after tests
+ */
 public class SeleniumCommon {
-    /*
-    Class to initialize everything before and after tests
-     */
     protected WebDriver driver;
     protected SeleniumObservable observable;
     protected TestContext testContext;
 
     @BeforeTest
-    public void testInit() {
+    protected void testInit() {
         this.driver = new DriverFactory().initializeBrowser();
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
-        observable = new SeleniumObservable(driver);
         testContext = new TestContext(driver);
+        observable = new SeleniumObservable(testContext);
     }
 
     @AfterTest
-    public void testQuit() throws InterruptedException {
-        Thread.sleep(2000);
+    protected void testQuit() {
         driver.quit();
     }
 
-    public void getToPage(String URI) {
+    protected void getToPage(String URI) {
         driver.get(URI);
     }
 
