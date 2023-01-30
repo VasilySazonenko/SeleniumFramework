@@ -1,7 +1,9 @@
 package framework;
 
 import driverFactory.DriverFactory;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
@@ -11,7 +13,6 @@ public class SeleniumCommon {
      */
     protected WebDriver driver;
     protected SeleniumObservable observable;
-
     protected TestContext testContext;
 
     @BeforeTest
@@ -20,15 +21,20 @@ public class SeleniumCommon {
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
         observable = new SeleniumObservable(driver);
-        testContext = new TestContext();
+        testContext = new TestContext(driver);
     }
 
     @AfterTest
-    public void testQuit() {
+    public void testQuit() throws InterruptedException {
+        Thread.sleep(2000);
         driver.quit();
     }
 
     public void getToPage(String URI){
         driver.get(URI);
+    }
+
+    public WebDriver getDriver() {
+        return driver;
     }
 }
