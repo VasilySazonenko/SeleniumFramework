@@ -1,9 +1,7 @@
 package framework;
 
 import driverFactory.DriverFactory;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
@@ -30,11 +28,8 @@ public class SeleniumCommon {
         driver.quit();
     }
 
-    public void getToPage(String URI){
+    public void getToPage(String URI) {
         driver.get(URI);
     }
 
-    public WebDriver getDriver() {
-        return driver;
-    }
 }
