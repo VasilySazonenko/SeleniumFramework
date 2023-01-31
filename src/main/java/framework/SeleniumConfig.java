@@ -4,15 +4,18 @@ import java.util.Properties;
 
 import static utils.PropertyReader.getProperties;
 
-public class SeleniumConfig {
+/*
+Getters and setters to get values from property files
+ */
+public enum SeleniumConfig {
+    INSTANCE;
+    private final Properties properties;
 
-    /*
-    Getters and setters to get values from property files
-     */
+    public static SeleniumConfig get() {
+        return INSTANCE;
+    }
 
-    private static final Properties properties;
-
-    static {
+    SeleniumConfig() {
         try {
             properties = getProperties("selenium.properties");
         } catch (Exception e) {
@@ -22,5 +25,12 @@ public class SeleniumConfig {
 
     public String getBrowser(){
         return properties.getProperty("browser");
+    }
+    public String getURI(){
+        return properties.getProperty("URI");
+    }
+
+    public int getSeleniumWebDriverWait() {
+        return Integer.parseInt("30"); //TODO move value to properties file
     }
 }

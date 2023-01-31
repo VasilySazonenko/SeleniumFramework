@@ -9,12 +9,11 @@ public class TestContext {
 
     private WebDriver driver;
 
-    private String webPAgeURI = "https://www.rahulshettyacademy.com/AutomationPractice/";
+    private SeleniumObservable observable;
 
-    private String login = "VasilyQA";
-
-    public TestContext(WebDriver driver) {
+    public TestContext(WebDriver driver, SeleniumObservable observable) {
         this.driver = driver;
+        this.observable = observable;
     }
 
     public WebDriver getDriver() {
@@ -25,19 +24,11 @@ public class TestContext {
         this.driver = driver;
     }
 
-    public String getLogin() {
-        return login;
+    public SeleniumObservable getObservable() {
+        return observable;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public String getWebPageURI() {
-        return webPAgeURI;
-    }
-
-    public void setWebPageURI(String webPAgeURI) {
-        this.webPAgeURI = webPAgeURI;
+    public void setObservable(SeleniumObservable observable) {
+        this.observable = observable;
     }
 }

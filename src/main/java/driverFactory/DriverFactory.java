@@ -10,8 +10,7 @@ public class DriverFactory {
      */
 
     public WebDriver initializeBrowser() {
-        SeleniumConfig seleniumConfig = new SeleniumConfig();
-        String browser = seleniumConfig.getBrowser().toLowerCase();
+        String browser = SeleniumConfig.get().getBrowser().toLowerCase();
         WebDriver driver;
         switch (browser){
             case "chrome":
