@@ -1,7 +1,7 @@
 package tests;
 
-import PageObjects.oneA.Header1aPage;
-import PageObjects.oneA.MainBodyPage;
+import pageObjects.oneA.Header1aPage;
+import pageObjects.oneA.MainBodyPage;
 import framework.SeleniumCommon;
 import framework.SeleniumConfig;
 import org.testng.annotations.Test;

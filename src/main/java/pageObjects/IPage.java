@@ -1,4 +1,4 @@
-package PageObjects;
+package pageObjects;
 
 /*
 Checks that BasePage has every validation that are here

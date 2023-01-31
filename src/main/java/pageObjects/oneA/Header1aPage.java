@@ -1,6 +1,6 @@
-package PageObjects.oneA;
+package pageObjects.oneA;
 
-import PageObjects.BasePage;
+import pageObjects.BasePage;
 import framework.TestContext;
 import org.openqa.selenium.By;
 

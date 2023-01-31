@@ -1,9 +1,8 @@
-package PageObjects.oneA;
+package pageObjects.oneA;
 
-import PageObjects.BasePage;
+import pageObjects.BasePage;
 import framework.TestContext;
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class MainBodyPage extends BasePage {
 

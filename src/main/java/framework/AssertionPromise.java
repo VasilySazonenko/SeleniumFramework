@@ -1,7 +1,5 @@
 package framework;
 
-import PageObjects.Page;
-
 import java.util.concurrent.TimeUnit;
 
 public class AssertionPromise {

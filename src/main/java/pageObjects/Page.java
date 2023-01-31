@@ -1,13 +1,11 @@
-package PageObjects;
+package pageObjects;
 
 import framework.TestContext;
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
 
-import java.time.Duration;
-import java.util.NoSuchElementException;
+import java.util.List;
+import java.util.Optional;
 
 /*
 Clicks, findelements and so on
@@ -27,6 +25,9 @@ public abstract class Page {
 
     protected WebElement findElement(By element) {
         return driver.findElement(element);
+    }
+    protected List<WebElement> findElements(By element) {
+        return driver.findElements(element);
     }
 
     protected void typeText(By by, String input) {
