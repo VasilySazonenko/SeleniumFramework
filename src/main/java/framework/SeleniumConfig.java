@@ -32,7 +32,6 @@ public enum SeleniumConfig {
     public String getAmazonURI(){
         return properties.getProperty("amazon");
     }
-
     public int getSeleniumWebDriverWait() {
         return Integer.parseInt("30"); //TODO move value to properties file
     }

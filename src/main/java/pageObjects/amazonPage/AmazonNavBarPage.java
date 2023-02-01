@@ -1,10 +1,8 @@
-package pageObjects.amazonMainPage;
+package pageObjects.amazonPage;
 
 import framework.TestContext;
 import org.openqa.selenium.By;
 import pageObjects.BasePage;
-
-import java.util.Base64;
 
 public class AmazonNavBarPage extends BasePage {
 

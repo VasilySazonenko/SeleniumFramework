@@ -1,4 +1,4 @@
-package pageObjects.amazonMainPage;
+package pageObjects.amazonPage;
 
 import framework.TestContext;
 import org.openqa.selenium.By;
@@ -26,13 +26,17 @@ public class AmazonMainPage extends BasePage {
                 );
     }
 
-    public void clickByNameFromList(String productName) {
+    public AmazonMainPage clickByNameFromList(String productName) {
         WebElement element = findElements(ITEM_TO_BUY)
                 .stream()
                 .filter(item -> item.getText().contains(productName))
                 .findFirst()
                 .orElseThrow(() -> new AssertionError(String.format("Element with the text %s is not found", productName)));
         click(element);
+        return this;
     }
 
+    public ProductPage getProductPage(){
+        return new ProductPage(getContext());
+    }
 }

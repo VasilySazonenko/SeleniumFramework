@@ -29,8 +29,8 @@ public class SeleniumCommon {
 
     @AfterTest
     protected void testQuit() throws InterruptedException {
-//        Thread.sleep(2000);
-//        driver.quit();
+        Thread.sleep(2000);
+        driver.quit();
     }
 
     protected void goToPage(String URI) {

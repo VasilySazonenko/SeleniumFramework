@@ -1,4 +1,4 @@
-package pageObjects.amazonMainPage;
+package pageObjects.amazonPage;
 
 import framework.TestContext;
 import org.openqa.selenium.By;
@@ -8,14 +8,14 @@ import pageObjects.BasePage;
 If we write static method and all it through child, then verify method is not run and we avoid
 running constructor of BasePage with verify.
  */
-public class AmazonAcceptCookies extends BasePage {
+public class AmazonAcceptCookiesPage extends BasePage {
 
 
     private static final By PRODUCTS_CONTAINER = By.cssSelector("#sp-cc");
 
     private static final By ACCEPT_COOKIE = By.cssSelector("#sp-cc-accept");
 
-    public AmazonAcceptCookies(TestContext testContext) {
+    public AmazonAcceptCookiesPage(TestContext testContext) {
         super(testContext);
     }
 
